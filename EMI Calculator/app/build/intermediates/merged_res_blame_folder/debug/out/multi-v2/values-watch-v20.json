@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.yassineabou.calculator.app-mergeDebugResources-55:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/Users/sarveshdoshi/.gradle/caches/transforms-3/da2ecb1cbb32b602cde8be22e35c5714/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

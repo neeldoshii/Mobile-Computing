@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.yassineabou.calculator.app-mergeDebugResources-55:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/sarveshdoshi/.gradle/caches/transforms-3/da2ecb1cbb32b602cde8be22e35c5714/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

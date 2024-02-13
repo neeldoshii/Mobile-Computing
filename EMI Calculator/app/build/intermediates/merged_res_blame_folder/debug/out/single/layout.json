@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/activity_main.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/fragment_emi_calculator.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_emi_calculator.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/fragment_emi_calculation.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_emi_calculation.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/fragment_compare.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_compare.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/previous_operation_item.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/previous_operation_item.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-mergeDebugResources-56:/layout/fragment_calculator.xml",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_calculator.xml"
+    }
+]

@@ -1,0 +1,166 @@
+[
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_ic_math.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/ic_math.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_dollar.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/dollar.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout-land_fragment_calculator.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout-land/fragment_calculator.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_ic_baseline_calculate_24.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/ic_baseline_calculate_24.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/menu_share_menu.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/menu/share_menu.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_backspace.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/backspace.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_ic_plus.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/ic_plus.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_custom_button_landscape.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/custom_button_landscape.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_ic_baseline_share_24.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/ic_baseline_share_24.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_custom_button_equal_landscape.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/custom_button_equal_landscape.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_activity_main.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_history.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/history.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_previous_operation_item.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/previous_operation_item.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/font_roboto.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/font/roboto.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_custom_button_equal.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/custom_button_equal.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_radius_border.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/radius_border.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_custom_button.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/custom_button.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_fragment_calculator.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_calculator.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_fragment_compare.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_compare.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_fragment_emi_calculation.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_emi_calculation.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/layout_fragment_emi_calculator.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/layout/fragment_emi_calculator.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/drawable_radius_button.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/drawable/radius_button.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/navigation_navigation.xml.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/navigation/navigation.xml"
+    },
+    {
+        "merged": "com.yassineabou.calculator.app-merged_res-57:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.yassineabou.calculator.app-main-59:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    }
+]

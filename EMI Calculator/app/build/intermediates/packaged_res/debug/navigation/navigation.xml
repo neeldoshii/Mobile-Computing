@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/calculatorFragment">
+
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.yassineabou.calculator.ui.calculator.CalculatorFragment"
+        android:label="CalculatorFragment"
+        tools:layout="@layout/fragment_calculator">
+        <action
+            android:id="@+id/calculatorFragment_to_emiCalculator"
+            app:destination="@id/emiCalculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emiCalculationFragment"
+        android:name="com.yassineabou.calculator.ui.emi.EmiCalculationFragment"
+        android:label="EMI calculation"
+        tools:layout="@layout/fragment_emi_calculation">
+        <action
+            android:id="@+id/emiCalculation_to_emiCalculator"
+            app:destination="@id/emiCalculatorFragment"
+            app:popUpTo="@id/calculatorFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/emiCalculation_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emiCalculatorFragment"
+        android:name="com.yassineabou.calculator.ui.emi.EmiCalculatorFragment"
+        android:label="EMI calculator"
+        tools:layout="@layout/fragment_emi_calculator">
+        <action
+            android:id="@+id/emiCalculator_to_compareFragment"
+            app:destination="@id/compareFragment" />
+        <action
+            android:id="@+id/emiCalculator_to_emiCalculation"
+            app:destination="@id/emiCalculationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compareFragment"
+        android:name="com.yassineabou.calculator.ui.emi.CompareFragment"
+        android:label="Compare"
+        tools:layout="@layout/fragment_compare">
+        <action
+            android:id="@+id/compareFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/compareFragment_to_emiCalculator"
+            app:destination="@id/emiCalculatorFragment" />
+
+    </fragment>
+</navigation>

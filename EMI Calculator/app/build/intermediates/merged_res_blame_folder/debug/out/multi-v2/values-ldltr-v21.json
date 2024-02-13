@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.yassineabou.calculator.app-mergeDebugResources-55:/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "/Users/sarveshdoshi/.gradle/caches/transforms-3/da2ecb1cbb32b602cde8be22e35c5714/transformed/appcompat-1.6.1/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

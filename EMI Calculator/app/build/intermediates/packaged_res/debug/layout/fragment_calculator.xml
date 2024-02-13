@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                  
+                                                        
+
+    
+
+                 
+                            
+                                                                                  
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.calculator.CalculatorFragment" android:tag="layout/fragment_calculator_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="end"
+            android:paddingStart="@dimen/_25sdp"
+            android:paddingTop="@dimen/_24sdp"
+            android:paddingEnd="@dimen/_25sdp"
+            app:autoSizeTextType="uniform"
+            tools:text="15+15"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
+            android:textSize="@dimen/_36ssp"
+            android:textColor="?attr/textColor"
+            android:tag="binding_1"          
+                                                                                                  />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="bottom|end"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/_25sdp"
+            android:tag="binding_2"           
+            android:textAlignment="viewEnd"
+            android:textColor="?attr/secondTextColor"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input"
+            tools:ignore="RtlCompat,TextContrastCheck"
+            tools:text="30" />
+
+        <ImageButton
+            android:id="@+id/history"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:srcCompat="@drawable/history"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/history"
+            android:background="?attr/bgColor" />
+
+        <ImageButton
+            android:id="@+id/scientificMode"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:srcCompat="@drawable/ic_math"
+            app:layout_constraintLeft_toRightOf="@+id/history"
+            android:contentDescription="@string/scientificMode"
+            android:background="?attr/bgColor" />
+
+
+        <ImageButton
+            android:id="@+id/emiCalculator"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/dollar"
+            app:layout_constraintStart_toEndOf="@+id/scientificMode"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            android:contentDescription="@string/emiCalculator"
+            android:visibility="visible"
+            android:background="?attr/bgColor" />
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/backspace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:srcCompat="@drawable/backspace"
+            android:tag="binding_3"                                   
+            android:background="?attr/bgColor" />
+
+        <View
+            android:id="@+id/lineSeparatorCalculator"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/history"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="?attr/secondBgColor" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/normal_mode_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="clearInput,brackets,percentage,
+        numberSeven,numberEight,numberNine,numberFour,numberFive,numberSix,numberOne,numberTwo,numberThree,minusSign,numberZero,decimalPoint"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/historyGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="LineSeparatorHistory,clearHistory,listPreviousOperations"
+            tools:visibility="invisible" />
+
+        <View
+            android:id="@+id/LineSeparatorHistory"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.6"
+            android:background="?attr/secondBgColor"
+            app:layout_constraintEnd_toEndOf="@+id/numberNine"
+            android:layout_marginEnd="@dimen/_11sdp"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            android:layout_marginTop="17dp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listPreviousOperations"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintEnd_toEndOf="@+id/LineSeparatorHistory"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            android:layout_marginEnd="@dimen/_15sdp"
+            tools:listitem="@layout/previous_operation_item" />
+
+        <Button
+            android:id="@+id/clearHistory"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button"
+            android:text="@string/clearHistory"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_8sdp"
+            app:backgroundTint="@color/purple"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/LineSeparatorHistory"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tag="binding_4"                                            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clearInput"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/roboto"
+            android:text="@string/clear"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_25ssp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/history"
+            android:tag="binding_5"                           />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/brackets"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="22dp"
+            android:text="@string/brackets"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toEndOf="@+id/clearInput"
+            app:layout_constraintTop_toBottomOf="@+id/history"
+            style="@style/arithmeticOperator"
+            android:tag="binding_6"                               />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/percentage"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="22dp"
+            android:text="@string/percentage"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintStart_toEndOf="@+id/brackets"
+            app:layout_constraintTop_toBottomOf="@+id/history"
+            style="@style/arithmeticOperator"
+            android:tag="binding_7"                                 />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/division"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="22dp"
+            android:text="@string/division"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/percentage"
+            app:layout_constraintTop_toBottomOf="@+id/history"
+            style="@style/arithmeticOperator"
+            android:tag="binding_8"                                                 />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberSeven"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:text="@string/numberSeven"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            android:textSize="@dimen/_30ssp"
+            style="@style/number"
+            android:tag="binding_9"                                                />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberEight"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberEight"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberSeven"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            style="@style/number"
+            android:tag="binding_10"                                               />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberNine"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberNine"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberEight"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            style="@style/number"
+            android:tag="binding_11"                                              />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiplication"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="5dp"
+            android:text="@string/multiplication"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberNine"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            style="@style/arithmeticOperator"
+            android:tag="binding_12"                                                      />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberFour"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@string/numberFour"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            style="@style/number"
+            android:tag="binding_13"                                              />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberFive"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberFive"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberFour"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            style="@style/number"
+            android:tag="binding_14"                                              />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberSix"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberSix"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberFive"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            style="@style/number"
+            android:tag="binding_15"                                             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="5dp"
+            android:text="@string/minus"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberSix"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            style="@style/arithmeticOperator"
+            android:tag="binding_16"                                             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberOne"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@string/numberOne"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            style="@style/number"
+            android:tag="binding_17"                                             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberTwo"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberTwo"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberOne"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            style="@style/number"
+            android:tag="binding_18"                                             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberThree"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberThree"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberTwo"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            style="@style/number"
+            android:tag="binding_19"                                               />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="5dp"
+            android:text="@string/plus"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberThree"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            style="@style/arithmeticOperator"
+            android:tag="binding_20"                                            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minusSign"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@string/minusSign"
+            android:textSize="@dimen/_25ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            style="@style/number"
+            android:tag="binding_21"                               />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberZero"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/numberZero"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/minusSign"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            style="@style/number"
+            android:tag="binding_22"                                              />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/decimalPoint"
+            style="@style/number"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintHeight_percent="0.1"
+            android:tag="binding_23"                                 
+            android:text="@string/decimalPoint"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/numberZero"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal"
+            style="@style/arithmeticOperator"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_button_equal"
+            android:text="@string/equal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30ssp"
+            app:layout_constraintStart_toEndOf="@+id/decimalPoint"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            android:tag="binding_24"                      />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
