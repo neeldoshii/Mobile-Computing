@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yassineabou.calculator.ui.calculator.CalculatorViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.calculator.CalculatorFragment">
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="end"
+            android:onTextChanged="@{(text, start, before, count) -> viewModel.calculateInput()}"
+            android:paddingStart="@dimen/_25sdp"
+            android:paddingEnd="@dimen/_25sdp"
+            android:text="@{viewModel.input}"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_35ssp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="end"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/_25sdp"
+            android:text="@{viewModel.result}"
+            android:textColor="?attr/secondTextColor"
+            android:textSize="@dimen/_23ssp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageButton
+            android:id="@+id/history"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="?attr/bgColor"
+            android:contentDescription="@string/history"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:layout_constraintWidth_percent="0.15"
+            app:srcCompat="@drawable/history"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/normalMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="?attr/bgColor"
+            android:contentDescription="@string/scientificMode"
+            app:layout_constraintLeft_toRightOf="@+id/history"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:layout_constraintWidth_percent="0.15"
+            app:srcCompat="@drawable/ic_plus"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/emiCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="?attr/bgColor"
+            android:contentDescription="@string/emiCalculator"
+            app:layout_constraintStart_toEndOf="@+id/normalMode"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:layout_constraintWidth_percent="0.15"
+            app:srcCompat="@drawable/dollar"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="?attr/bgColor"
+            android:contentDescription="@string/backspace"
+            android:onClick="@{() -> viewModel.removeLastInputChar()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            app:layout_constraintWidth_percent="0.2"
+            app:srcCompat="@drawable/backspace"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <View
+            android:id="@+id/lineSeparatorCalculator"
+            android:layout_width="@dimen/_550sdp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?attr/secondBgColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/history" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/normal_mode_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="alternativeFunctions"
+            tools:visibility="gone" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/historyGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="LineSeparatorHistory,clearHistory,listPreviousOperations"
+            tools:visibility="invisible" />
+
+
+        <View
+            android:id="@+id/LineSeparatorHistory"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/_150sdp"
+            android:background="?attr/secondBgColor"
+            android:layout_marginEnd="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clearInput"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listPreviousOperations"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintHeight_percent="0.42"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/LineSeparatorHistory"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/clearInput"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            tools:listitem="@layout/previous_operation_item" />
+
+        <Button
+            android:id="@+id/clearHistory"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button"
+            android:onClick="@{() -> viewModel.clearListPreviousOperations()}"
+            android:text="@string/clearHistory"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/purple"
+            app:layout_constraintEnd_toEndOf="@+id/LineSeparatorHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clearInput"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.clearInput()}"
+            android:text="@string/clear"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toStartOf="@+id/brackets"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/root"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/brackets"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendBrackets()}"
+            android:text="@string/brackets"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toStartOf="@+id/percentage"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/clearInput"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/percentage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendPercentage()}"
+            android:text="@string/percentage"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toStartOf="@+id/division"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/brackets"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/division"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendArithmetic(@string/division)}"
+            android:text="@string/division"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/percentage"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberSeven"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberSeven)}"
+            android:text="@string/numberSeven"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberEight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tangent"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberEight"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberEight)}"
+            android:text="@string/numberEight"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberNine"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberSeven"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberNine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberNine)}"
+            android:text="@string/numberNine"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/multiplication"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberEight"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiplication"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendArithmetic(@string/multiplication)}"
+            android:text="@string/multiplication"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberNine"
+            app:layout_constraintTop_toBottomOf="@+id/clearInput"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberFour"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberFour)}"
+            android:text="@string/numberFour"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberFive"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/inverseNumber"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberFive"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberFive)}"
+            android:text="@string/numberFive"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberSix"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberFour"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberSix"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberSix)}"
+            android:text="@string/numberSix"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/minus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberFive"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendArithmetic(@string/minus)}"
+            android:text="@string/minus"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberSix"
+            app:layout_constraintTop_toBottomOf="@+id/numberSeven"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberOne"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberOne)}"
+            android:text="@string/numberOne"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberTwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/xPowerY"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberTwo"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberTwo)}"
+            android:text="@string/numberTwo"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberThree"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberOne"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberThree"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberThree)}"
+            android:text="@string/numberThree"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberTwo"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendArithmetic(@string/plus)}"
+            android:text="@string/plus"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberThree"
+            app:layout_constraintTop_toBottomOf="@+id/numberFour"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minusSign"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendMinusSign()}"
+            android:text="@string/minusSign"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberZero"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/eulerNumber"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/numberZero"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendNumber(@string/numberZero)}"
+            android:text="@string/numberZero"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/decimalPoint"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/minusSign"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/decimalPoint"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendDecimalPoint()}"
+            android:text="@string/decimalPoint"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/equal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberZero"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_equal_landscape"
+            android:onClick="@{() -> viewModel.insert()}"
+            android:text="@string/equal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/decimalPoint"
+            app:layout_constraintTop_toBottomOf="@+id/numberOne"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/alternativeFunctions"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:text="@string/alternativeOperation"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@+id/radian"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/radian"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/radianSymbol)}"
+            android:text="@string/radian"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/root"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/alternativeFunctions"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Degree"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/degreeSymbol)}"
+            android:text="@string/degree"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintEnd_toStartOf="@+id/cubeRoot"
+            app:layout_constraintStart_toEndOf="@+id/alternativeFunctions"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/first_group_functions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="radian,root,sine,cosine,
+         tangent,naturalLog,logarithm,inverseNumber,ePowerX,xSquared,xPowerY,absoluteValue,pi,
+         eulerNumber"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/root"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/rootSymbol)}"
+            android:text="@string/root"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toStartOf="@+id/clearInput"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/radian"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/sineSymbol)}"
+            android:text="@string/sine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/cosine"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cosine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/cosineSymbol)}"
+            android:text="@string/cosine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/tangent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sine"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tangent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/tangentSymbol)}"
+            android:text="@string/tangent"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberSeven"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cosine"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naturalLog"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/naturalLogSymbol)}"
+            android:text="@string/naturalLog"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/logarithm"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sine"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logarithm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/logarithmSymbol)}"
+            android:text="@string/logarithm"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/inverseNumber"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/naturalLog"
+            app:layout_constraintTop_toBottomOf="@+id/sine"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseNumberSymbol)}"
+            android:text="@string/inverseNumber"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberFour"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/logarithm"
+            app:layout_constraintTop_toBottomOf="@+id/sine"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ePowerX"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/ePowerXSymbol)}"
+            android:text="@string/ePowerX"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/xSquared"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/naturalLog"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/xSquared"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendPower(@string/xSquaredSymbol)}"
+            android:text="@string/xSquared"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/xPowerY"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ePowerX"
+            app:layout_constraintTop_toBottomOf="@+id/naturalLog"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/xPowerY"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendPower(@string/xPowerYSymbol)}"
+            android:text="@string/xPowerY"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberOne"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/xSquared"
+            app:layout_constraintTop_toBottomOf="@+id/naturalLog"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/absoluteValue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/absoluteValueSymbol)}"
+            android:text="@string/absoluteValue"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/pi"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ePowerX"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pi"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/pi)}"
+            android:text="@string/pi"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/eulerNumber"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/absoluteValue"
+            app:layout_constraintTop_toBottomOf="@+id/ePowerX"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/eulerNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/eulerNumberSymbol)}"
+            android:text="@string/eulerNumber"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/minusSign"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pi"
+            app:layout_constraintTop_toBottomOf="@+id/ePowerX"
+            app:layout_constraintWidth_percent="0.1"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/secondGroupFunctions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="Degree,cubeRoot,inverseSine,inverseCosine,
+         inverseTangent,hyperbolicSine,hyperbolicCosine,hyperbolicTangent,inverseHyperbolicSine,inverseHyperbolicCosine,inverseHyperbolicTangent,twoPowerX,cube,
+         factorial"
+            tools:visibility="gone" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cubeRoot"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/cubeRootSymbol)}"
+            android:text="@string/cubeRoot"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toStartOf="@+id/clearInput"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/Degree"
+            app:layout_constraintTop_toBottomOf="@+id/lineSeparatorCalculator"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseSine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseSineSymbol)}"
+            android:text="@string/inverseSine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/inverseCosine"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseCosine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseCosineSymbol)}"
+            android:text="@string/inverseCosine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/inverseTangent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/inverseSine"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseTangent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseTangentSymbol)}"
+            android:text="@string/inverseTangent"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/numberSeven"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/inverseCosine"
+            app:layout_constraintTop_toBottomOf="@+id/alternativeFunctions"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hyperbolicSine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/hyperbolicSineSymbol)}"
+            android:text="@string/hyperbolicSine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/hyperbolicCosine"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inverseSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hyperbolicCosine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/hyperbolicCosineSymbol)}"
+            android:text="@string/hyperbolicCosine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/hyperbolicTangent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/hyperbolicSine"
+            app:layout_constraintTop_toBottomOf="@+id/inverseSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hyperbolicTangent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/hyperbolicTangentSymbol)}"
+            android:text="@string/hyperbolicTangent"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/numberFour"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/hyperbolicCosine"
+            app:layout_constraintTop_toBottomOf="@+id/inverseSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseHyperbolicSine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseHyperbolicSineSymbol)}"
+            android:text="@string/inverseHyperbolicSine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/inverseHyperbolicCosine"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseHyperbolicCosine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseHyperbolicCosineSymbol)}"
+            android:text="@string/inverseHyperbolicCosine"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/inverseHyperbolicTangent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/inverseHyperbolicSine"
+            app:layout_constraintTop_toBottomOf="@+id/hyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/inverseHyperbolicTangent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/inverseHyperbolicTangentSymbol)}"
+            android:text="@string/inverseHyperbolicTangent"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/numberOne"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/inverseHyperbolicCosine"
+            app:layout_constraintTop_toBottomOf="@+id/hyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/twoPowerX"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendFunction(@string/twoPowerXSymbol)}"
+            android:text="@string/twoPowerX"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/cube"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inverseHyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cube"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendPower(@string/cubeSymbol)}"
+            android:text="@string/cube"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@+id/factorial"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/twoPowerX"
+            app:layout_constraintTop_toBottomOf="@+id/inverseHyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/factorial"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_28sdp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/custom_button_landscape"
+            android:onClick="@{() -> viewModel.appendPower(@string/FactorialSymbol)}"
+            android:text="@string/factorial"
+            android:textAllCaps="false"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/minusSign"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/cube"
+            app:layout_constraintTop_toBottomOf="@+id/inverseHyperbolicSine"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

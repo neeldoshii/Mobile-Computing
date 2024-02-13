@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">Calculator</string>
+
+
+    <string name="numberSeven">7</string>
+    <string name="numberEight">8</string>
+    <string name="numberNine">9</string>
+    <string name="numberFour">4</string>
+    <string name="numberFive">5</string>
+    <string name="numberSix">6</string>
+    <string name="decimalPoint">.</string>
+    <string name="numberOne">1</string>
+    <string name="numberTwo">2</string>
+    <string name="numberThree">3</string>
+    <string name="minusSign">+/-</string>
+    <string name="numberZero">0</string>
+
+
+    <string name="history">history</string>
+    <string name="scientificMode">scientificMode</string>
+    <string name="emiCalculator">emiCalculator</string>
+    <string name="backspace">backspace</string>
+    <string name="clearHistory">Clear history</string>
+
+
+    <string name="clear">C</string>
+    <string name="brackets">( )</string>
+    <string name="percentage">%</string>
+    <string name="division">÷</string>
+    <string name="multiplication">×</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
+
+
+    <string name="alternativeOperation">⇆</string>
+    <string name="root">√</string>
+    <string name="sine">sin</string>
+    <string name="cosine">cos</string>
+    <string name="tangent">tan</string>
+    <string name="naturalLog">In</string>
+    <string name="logarithm">log</string>
+    <string name="inverseNumber">1/x</string>
+    <string name="ePowerX">eˣ</string>
+    <string name="xSquared">x²</string>
+    <string name="xPowerY">xʸ</string>
+    <string name="absoluteValue">|x|</string>
+    <string name="pi">ℼ</string>
+    <string name="eulerNumber">e</string>
+    <string name="radian">Rad</string>
+    <string name="cubeRoot">∛</string>
+    <string name="inverseSine">sin⁻¹</string>
+    <string name="inverseCosine">cos⁻¹</string>
+    <string name="inverseTangent">tan⁻¹</string>
+    <string name="hyperbolicSine">sinh</string>
+    <string name="hyperbolicCosine">cosh</string>
+    <string name="hyperbolicTangent">tanh</string>
+    <string name="inverseHyperbolicSine">sinh⁻¹</string>
+    <string name="inverseHyperbolicCosine">cosh⁻¹</string>
+    <string name="inverseHyperbolicTangent">tanh⁻¹</string>
+    <string name="twoPowerX">2ˣ</string>
+    <string name="cube">x³</string>
+    <string name="factorial">x!</string>
+    <string name="degree">Deg</string>
+
+
+    <string name="xSquaredSymbol">^(2)</string>
+    <string name="xPowerYSymbol">^(</string>
+    <string name="cubeSymbol">^(3)</string>
+    <string name="FactorialSymbol">!</string>
+    <string name="rootSymbol">√(</string>
+    <string name="cosineSymbol">cos(</string>
+    <string name="sineSymbol">sin(</string>
+    <string name="tangentSymbol">tan(</string>
+    <string name="naturalLogSymbol">ln(</string>
+    <string name="logarithmSymbol">log10(</string>
+    <string name="inverseNumberSymbol">1÷</string>
+    <string name="ePowerXSymbol">e^(</string>
+    <string name="absoluteValueSymbol">abs(</string>
+    <string name="eulerNumberSymbol">e</string>
+    <string name="inverseSineSymbol">asin(</string>
+    <string name="inverseCosineSymbol">acos(</string>
+    <string name="inverseTangentSymbol">atan(</string>
+    <string name="hyperbolicSineSymbol">sinh(</string>
+    <string name="hyperbolicCosineSymbol">cosh(</string>
+    <string name="hyperbolicTangentSymbol">tanh(</string>
+    <string name="inverseHyperbolicSineSymbol">asinh(</string>
+    <string name="inverseHyperbolicCosineSymbol">acosh(</string>
+    <string name="inverseHyperbolicTangentSymbol">atanh(</string>
+    <string name="twoPowerXSymbol">2^(</string>
+    <string name="cubeRootSymbol">∛(</string>
+    <string name="radianSymbol">rad(</string>
+    <string name="degreeSymbol">deg(</string>
+
+
+    <string name="loanAmount">Loan amount</string>
+    <string name="InterestRate">Interest rate</string>
+    <string name="numberInstallments">Number of installments</string>
+    <string name="calculate">Calculate</string>
+    <string name="emiAmount">EMI amount</string>
+    <string name="perMonth">per month</string>
+    <string name="installments">%s installments</string>
+    <string name="totalAmount">Total amount to pay is %s</string>
+    <string name="principal">Principal</string>
+    <string name="interest">Interest</string>
+    <string name="labelCompare">Compare with another</string>
+    <string name="done">Done</string>
+    <string name="labelSecondEmiCalculator">Enter the details of the second EMI option.</string>
+    <string name="compare">Compare</string>
+    <string name="firstOption">First option</string>
+    <string name="secondOption">Second option</string>
+    <string name="reset">Reset</string>
+    <string name="hintLoanAmount">Enter cost of purchase</string>
+    <string name="hintInterestRate">Enter annual rate</string>
+    <string name="hintNumberInstallments">Enter number of installments</string>
+    <string name="share">SHARE</string>
+    <string name="shareEmiCalculation">Loan amount: %1$s\nEMI amount: %2$s\nInterest rate: %3$s\nNumber of installments: %4$s
+    </string>
+    <string name="shareCompare">First option \nLoan amount: %1$s\nEMI amount: %2$s\nInterest rate: %3$s\nNumber of installments: %4$s\nSecond option \nLoan amount: %5$s\nEMI amount: %6$s\nInterest rate: %7$s\nNumber of installments: %8$s
+    </string>
+
+
+</resources>
