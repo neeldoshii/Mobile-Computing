@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                   
+
+    
+
+                 
+                                    
+                                                                             
+
+                 
+                                           
+                                                                                      
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:tag="layout/previous_operation_item_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:gravity="end"
+            android:paddingStart="@dimen/_15sdp"
+            android:textAlignment="viewEnd"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:autoSizeTextType="uniform"
+            android:tag="binding_1"        
+            tools:text="15+15"
+            android:paddingEnd="0dp"
+                                                                                                                 />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="end"
+            android:paddingStart="@dimen/_15sdp"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input"
+            app:autoSizeTextType="uniform"
+            android:tag="binding_2"         
+            tools:text="30"
+            android:paddingEnd="0dp"
+                                                                                                                  />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
+        </item>
+    </string-array>
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
+        </item>
+    </string-array>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/roboto</item>
+    </array>
+    <attr format="color" name="bgColor"/>
+    <attr format="color" name="fifthBgColor"/>
+    <attr format="color" name="fourthBgColor"/>
+    <attr format="color" name="secondBgColor"/>
+    <attr format="color" name="secondTextColor"/>
+    <attr format="color" name="sixthTextColor"/>
+    <attr format="color" name="textColor"/>
+    <attr format="color" name="thirdBgColor"/>
+    <attr format="color" name="thirdTextColor"/>
+    <color name="black">#252525</color>
+    <color name="black_100">#ff000000</color>
+    <color name="black_200">#7B7979</color>
+    <color name="gray">#989898</color>
+    <color name="gray_200">#E4E4E4</color>
+    <color name="gray_300">#F2F2F2</color>
+    <color name="gray_500">#656565</color>
+    <color name="ic_launcher_background">#997592</color>
+    <color name="purple">#997592</color>
+    <color name="purple_300">#755A6E</color>
+    <color name="red">#D46E57</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_100">#F3F3F3</color>
+    <color name="white_200">#F4F4F4</color>
+    <string name="FactorialSymbol">!</string>
+    <string name="InterestRate">Interest rate</string>
+    <string name="absoluteValue">|x|</string>
+    <string name="absoluteValueSymbol">abs(</string>
+    <string name="alternativeOperation">⇆</string>
+    <string name="app_name">Calculator</string>
+    <string name="backspace">backspace</string>
+    <string name="brackets">( )</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">C</string>
+    <string name="clearHistory">Clear history</string>
+    <string name="compare">Compare</string>
+    <string name="cosine">cos</string>
+    <string name="cosineSymbol">cos(</string>
+    <string name="cube">x³</string>
+    <string name="cubeRoot">∛</string>
+    <string name="cubeRootSymbol">∛(</string>
+    <string name="cubeSymbol">^(3)</string>
+    <string name="decimalPoint">.</string>
+    <string name="degree">Deg</string>
+    <string name="degreeSymbol">deg(</string>
+    <string name="division">÷</string>
+    <string name="done">Done</string>
+    <string name="ePowerX">eˣ</string>
+    <string name="ePowerXSymbol">e^(</string>
+    <string name="emiAmount">EMI amount</string>
+    <string name="emiCalculator">emiCalculator</string>
+    <string name="equal">=</string>
+    <string name="eulerNumber">e</string>
+    <string name="eulerNumberSymbol">e</string>
+    <string name="factorial">x!</string>
+    <string name="firstOption">First option</string>
+    <string name="hintInterestRate">Enter annual rate</string>
+    <string name="hintLoanAmount">Enter cost of purchase</string>
+    <string name="hintNumberInstallments">Enter number of installments</string>
+    <string name="history">history</string>
+    <string name="hyperbolicCosine">cosh</string>
+    <string name="hyperbolicCosineSymbol">cosh(</string>
+    <string name="hyperbolicSine">sinh</string>
+    <string name="hyperbolicSineSymbol">sinh(</string>
+    <string name="hyperbolicTangent">tanh</string>
+    <string name="hyperbolicTangentSymbol">tanh(</string>
+    <string name="installments">%s installments</string>
+    <string name="interest">Interest</string>
+    <string name="inverseCosine">cos⁻¹</string>
+    <string name="inverseCosineSymbol">acos(</string>
+    <string name="inverseHyperbolicCosine">cosh⁻¹</string>
+    <string name="inverseHyperbolicCosineSymbol">acosh(</string>
+    <string name="inverseHyperbolicSine">sinh⁻¹</string>
+    <string name="inverseHyperbolicSineSymbol">asinh(</string>
+    <string name="inverseHyperbolicTangent">tanh⁻¹</string>
+    <string name="inverseHyperbolicTangentSymbol">atanh(</string>
+    <string name="inverseNumber">1/x</string>
+    <string name="inverseNumberSymbol">1÷</string>
+    <string name="inverseSine">sin⁻¹</string>
+    <string name="inverseSineSymbol">asin(</string>
+    <string name="inverseTangent">tan⁻¹</string>
+    <string name="inverseTangentSymbol">atan(</string>
+    <string name="labelCompare">Compare with another</string>
+    <string name="labelSecondEmiCalculator">Enter the details of the second EMI option.</string>
+    <string name="loanAmount">Loan amount</string>
+    <string name="logarithm">log</string>
+    <string name="logarithmSymbol">log10(</string>
+    <string name="minus">-</string>
+    <string name="minusSign">+/-</string>
+    <string name="multiplication">×</string>
+    <string name="naturalLog">In</string>
+    <string name="naturalLogSymbol">ln(</string>
+    <string name="numberEight">8</string>
+    <string name="numberFive">5</string>
+    <string name="numberFour">4</string>
+    <string name="numberInstallments">Number of installments</string>
+    <string name="numberNine">9</string>
+    <string name="numberOne">1</string>
+    <string name="numberSeven">7</string>
+    <string name="numberSix">6</string>
+    <string name="numberThree">3</string>
+    <string name="numberTwo">2</string>
+    <string name="numberZero">0</string>
+    <string name="perMonth">per month</string>
+    <string name="percentage">%</string>
+    <string name="pi">ℼ</string>
+    <string name="plus">+</string>
+    <string name="principal">Principal</string>
+    <string name="radian">Rad</string>
+    <string name="radianSymbol">rad(</string>
+    <string name="reset">Reset</string>
+    <string name="root">√</string>
+    <string name="rootSymbol">√(</string>
+    <string name="scientificMode">scientificMode</string>
+    <string name="secondOption">Second option</string>
+    <string name="share">SHARE</string>
+    <string name="shareCompare">First option \nLoan amount: %1$s\nEMI amount: %2$s\nInterest rate: %3$s\nNumber of installments: %4$s\nSecond option \nLoan amount: %5$s\nEMI amount: %6$s\nInterest rate: %7$s\nNumber of installments: %8$s
+    </string>
+    <string name="shareEmiCalculation">Loan amount: %1$s\nEMI amount: %2$s\nInterest rate: %3$s\nNumber of installments: %4$s
+    </string>
+    <string name="sine">sin</string>
+    <string name="sineSymbol">sin(</string>
+    <string name="tangent">tan</string>
+    <string name="tangentSymbol">tan(</string>
+    <string name="totalAmount">Total amount to pay is %s</string>
+    <string name="twoPowerX">2ˣ</string>
+    <string name="twoPowerXSymbol">2^(</string>
+    <string name="xPowerY">xʸ</string>
+    <string name="xPowerYSymbol">^(</string>
+    <string name="xSquared">x²</string>
+    <string name="xSquaredSymbol">^(2)</string>
+    <style name="MyDrawerArrowToggleStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">?attr/thirdTextColor</item>
+    </style>
+    <style name="Theme.Calculator0" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/gray_300</item>
+        <item name="colorPrimaryVariant">@color/gray_300</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/purple</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+        
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="toolbarStyle">@style/custom_toolbar</item>
+        <item name="drawerArrowStyle">@style/MyDrawerArrowToggleStyle</item>
+        <item name="textColor">@color/black_200</item>
+        <item name="secondTextColor">@color/gray</item>
+        <item name="bgColor">@color/white</item>
+        <item name="secondBgColor">@color/white_100</item>
+        <item name="thirdBgColor">@color/white_200</item>
+        <item name="fourthBgColor">@color/gray_300</item>
+        <item name="fifthBgColor">@color/white</item>
+        <item name="thirdTextColor">@color/black</item>
+        <item name="sixthTextColor">@color/gray_200</item>
+
+    </style>
+    <style name="arithmeticOperator">
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+        <item name="android:background">@drawable/custom_button</item>
+
+        <item name="android:textColor">@color/purple</item>
+    </style>
+    <style name="custom_toolbar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">?attr/thirdTextColor</item>
+    </style>
+    <style name="number">
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:textColor">?attr/textColor</item>
+    </style>
+</resources>
