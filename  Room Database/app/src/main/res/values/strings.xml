@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Room</string>
+    <string name="add">add</string>
+    <string name="enter_phone_no">Enter Phone No</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_first_name">Enter First Name</string>
+</resources>
