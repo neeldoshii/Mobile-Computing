@@ -11,4 +11,5 @@ Following is a list of experiments performed.
 | 2     | Canvas Drawing                           | [Link](https://github.com/neeldoshii/Mobile-Computing/tree/main/CanvasDrawing)                  |
 | 3     | GPS location information                 | [Link](https://github.com/neeldoshii/Mobile-Computing/tree/main/GPSLocationInformation)         |
 | 4     | Income tax/loan EMI calculator           | [Link](https://github.com/neeldoshii/Mobile-Computing/tree/main/EMI%20Calculator)               |
+| 5     | Frequency Reuse                          | [Link](https://github.com/neeldoshii/Mobile-Computing/tree/main/EMI%20Calculator)               |
 
